@@ -1,1 +1,7 @@
-<h1>Bienvenido al Mini-Bank<h1>
+
+<% if current_usuario %>
+    <h1><%= current_usuario.nombre%> Bienvenido a Mini Bank<h1>
+    
+<% else %>
+    <h1> Bienvenido a Mini Bank<h1>
+<% end %>

@@ -1,3 +1,5 @@
+<p class= "notice"> <%= notice %> </p>
+<p class= "alert"> <%= alert %> </p>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,6 +12,14 @@
   </head>
 
   <body>
+  <% if current_usuario %>
+    <%= link_to "Cerrar Sesión", destroy_usuario_session_path, method: :delete %>
+    <%= link_to "Mis Cuentas", accounts_index_path %>
+  <% else %>
+    <%= link_to "Iniciar Sesión", new_usuario_session_path %>
+    <%= link_to "Registrarme", new_usuario_registration_path %>
+    
+  <% end %>
     <%= yield %>
   </body>
 </html>
