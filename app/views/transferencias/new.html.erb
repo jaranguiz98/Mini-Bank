@@ -1,0 +1,25 @@
+
+<center><h1 class="title" style="font-size: 300%;color:rgb(47,91,122)"> Transferir a <%=@usuario_seleccionado.nombre%></h1></center>
+
+
+  <%= form_with(model: @transferencium, method: :post) do |f| %>
+    <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :Monto %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.text_field :monto, autofocus: true%>
+              
+          </div>
+      </div>
+
+      <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :"Número de Cuenta" %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.text_field :account_id, autofocus: true%>
+          </div>
+      </div>
+  
+    <div class="action">
+          <p ><%= f.submit "Transferir", :class => "button is-info ml-2", :style => "background-color:rgb(47,91,122);"%></p>
+    </div>
+
+  <% end %>

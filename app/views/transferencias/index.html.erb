@@ -1,0 +1,28 @@
+<center><h1 class="title" style="font-size: 300%;color:rgb(47,91,122)"> Transferencia a Terceros</h1></center>
+<br>
+        <center>
+        <table class="table"> 
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <%for usuario in @usuarios do%>
+                <%if usuario.id != current_usuario.id%>
+                    <tbody>
+                        <td><%= usuario.nombre %></td>
+                        <td><%= usuario.apellido %></td>
+                        <td><%= usuario.email %></td>
+                        <td><%= link_to 'Transferir', transferencias_new_path(usuario.id), :class => "button is-info is-small", :style => "background-color:rgb(47,91,122);"%></td>
+                    </tbody>
+                <%end%>
+            <%end%>
+        </table>
+        </center>
+
+        
+       
+    
