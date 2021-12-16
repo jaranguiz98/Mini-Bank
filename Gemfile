@@ -71,3 +71,8 @@ gem 'jquery-rails', '~> 4.4.0'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rest-client'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem "rspec", "~> 3.10"
+gem 'rails-controller-testing'
+gem "rspec-rails", "~> 5.0"
+
+gem "simplecov", "~> 0.21.2"
