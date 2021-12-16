@@ -1,43 +1,48 @@
-<h2>Sign up</h2>
+<h1 class="title" style="font-size: 300%;color:rgb(47,91,122)"> Registrate</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "usuarios/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :email %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
+          </div>
+  </div>
+   <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :password %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password"%>
+          </div>
+  </div>
+   <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :password_confirmation %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password"%>
+          </div>
+  </div>
+   <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :nombre %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.text_field :nombre, autofocus: true, autocomplete: "Nombre"%>
+          </div>
+  </div>
+   <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :apellido %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.email_field :apellido, autofocus: true, autocomplete: "apellido"%>
+          </div>
+  </div>
+  <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :dirección %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.text_field :dirección, autofocus: true, autocomplete: "Dirección"%>
+          </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-  <%= f.label :nombre %><br />
-  <%= f.text_field :nombre, autocomplete: "Nombre" %>
-  </div>
-
-  <div class="field">
-  <%= f.label :apellido %><br />
-  <%= f.text_field :apellido, autocomplete: "Apellido" %>
-  </div>
-  <div class="field">
-  <%= f.label :dirección %><br />
-  <%= f.text_field :dirección, autocomplete: "Dirección" %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="action">
+        <p ><%= f.submit "Registrarme", :class => "button is-info ml-2", :style => "background-color:rgb(47,91,122);"%></p>
   </div>
 <% end %>
 

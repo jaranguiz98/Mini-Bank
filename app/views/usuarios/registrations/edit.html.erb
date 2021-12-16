@@ -44,6 +44,15 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :email %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.email_field :email, autofocus: true%>
+          </div>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
