@@ -4,6 +4,5 @@ class Usuario < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :accounts, dependent: :destroy
-  has_many :sent_transferencias, class_name: 'Transferencia', foreign_key: 'sender_id', dependent: :destroy
-  has_many :received_transferencias, class_name: 'Transferencia', foreign_key: 'recipient_id', dependent: :destroy
+  has_many :transferencium, dependent: :destroy
 end

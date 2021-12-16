@@ -1,0 +1,19 @@
+<h1>Tu Cuenta <%=@cuenta.id%></h1>
+<table> 
+            <thead>
+                <tr>
+                    <th>Número de Cuenta</th>
+                    <th></th>
+                    <th>Tipo</th>
+                    <th></th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><%= @cuenta.id %></td>
+                <td></td>
+                <td><%= @cuenta.tipo %></td>
+                <td></td>
+                <td><%= @cuenta.monto %></td>
+            </tbody>
+        </table>

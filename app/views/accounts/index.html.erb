@@ -1,3 +1,63 @@
 <div>
     <h1 class="title"> Tus Cuentas </h1>
 </div>
+<br>
+<div>
+    <p><%= link_to 'Abre una nueva Cuenta', accounts_new_path, class: "button" %> </p>
+    <p><%= link_to 'Transferencia a Terceros', transferencias_index_path, class: "button" %> </p>
+</div>
+<%for cuenta in @cuentas do%>
+    <%if cuenta.usuario_id == current_usuario.id%>
+        <table> 
+            <thead>
+                <tr>
+                    <th>Número de Cuenta</th>
+                    <th></th>
+                    <th>Tipo</th>
+                    <th></th>
+                    <th>Monto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><%= cuenta.id %></td>
+                <td></td>
+                <td><%= cuenta.tipo %></td>
+                <td></td>
+                <td><%= cuenta.monto %></td>
+            </tbody>
+        </table>
+
+        <%= link_to 'Detalles', accounts_show_path(cuenta.id)%>
+        <%= link_to 'Eliminar', accounts_delete_path(cuenta.id), method: :delete%>
+    <%end%>
+<%end%>
+<div>
+    <h1 class="title"> Indicadores Económicos </h1>
+    <%=puts @output.keys  %>
+    <%for llave in @output.keys do %>
+    
+            <table> 
+                <thead>
+                    <tr>
+                        <th> Indicador </th>
+                        <th></th>
+                        <th>Unidad de Medida</th>
+                        <th></th>
+                        <th>Fecha Medición</th>
+                        <th></th>
+                        <th>Valor</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <td><%= @output[llave]["name"] %></td>
+                    <td></td>
+                    <td><%= @output[llave]["unit"] %></td>
+                    <td></td>
+                    <td><%= @output[llave]["date"] %></td>
+                    <td></td>
+                    <td><%= @output[llave]["value"] %></td>
+                </tbody>
+            </table>
+    <%end%>
+</div>

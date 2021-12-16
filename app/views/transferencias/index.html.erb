@@ -1,0 +1,26 @@
+<h1>Transferencia a Terceros</h1>
+<%for usuario in @usuarios do%>
+    <%if usuario.id != current_usuario.id%>
+        <table> 
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th></th>
+                    <th>Apellido</th>
+                    <th></th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td><%= usuario.nombre %></td>
+                <td></td>
+                <td><%= usuario.apellido %></td>
+                <td></td>
+                <td><%= usuario.email %></td>
+            </tbody>
+        </table>
+
+        <%= link_to 'Transferir', transferencias_new_path(usuario.id)%>
+       
+    <%end%>
+<%end%>

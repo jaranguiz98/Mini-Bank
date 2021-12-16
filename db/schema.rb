@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_14_200105) do
+ActiveRecord::Schema.define(version: 2021_12_15_174638) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "tipo"
     t.integer "monto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "usuario_id"
+    t.index ["usuario_id"], name: "index_accounts_on_usuario_id"
   end
 
   create_table "historials", force: :cascade do |t|
@@ -28,6 +30,10 @@ ActiveRecord::Schema.define(version: 2021_12_14_200105) do
     t.integer "monto"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "usuario_id"
+    t.integer "account_id"
+    t.index ["account_id"], name: "index_transferencia_on_account_id"
+    t.index ["usuario_id"], name: "index_transferencia_on_usuario_id"
   end
 
   create_table "users", force: :cascade do |t|

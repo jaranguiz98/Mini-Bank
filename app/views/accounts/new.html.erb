@@ -1,0 +1,27 @@
+<h1>Crea tu Mini Cuenta</h1>
+
+<%= form_with(model: @account, method: :post) do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :tipo %><br />
+    <div class="select">
+        <select <%= f.text_field :tipo, autofocus: true, autocomplete: "Tipo de cuenta" %>>
+            <option value="Vista">Vista</option>
+            <option value="Corriente">Corriente</option>
+        </select>
+    </div>
+  </div>
+
+ 
+
+
+  
+  
+
+
+
+  <div class="action">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>

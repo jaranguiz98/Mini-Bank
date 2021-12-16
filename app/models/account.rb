@@ -1,4 +1,4 @@
 class Account < ApplicationRecord
-    belogs_to :usuario
-
+    belongs_to :usuario
+    has_many :transferencium, dependent: :destroy
 end

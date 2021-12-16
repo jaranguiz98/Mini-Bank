@@ -1,0 +1,33 @@
+<h1>Transferir a <%=@usuario_seleccionado.nombre%><h1>
+
+<%= form_with(model: @transferencium, method: :post) do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :monto %><br />
+    <div >
+     <%= f.text_field :monto, autofocus: true, autocomplete: "Monto" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :"Número de Cuenta" %><br />
+    <div >
+     <%= f.text_field :account_id, autofocus: true, autocomplete: "Número de cuenta" %>
+    </div>
+  </div>
+
+  
+
+ 
+
+
+  
+  
+
+
+
+  <div class="action">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
