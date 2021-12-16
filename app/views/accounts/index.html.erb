@@ -1,0 +1,65 @@
+<%require 'date'%>
+<div>
+    <center><h1 class="title" style="font-size: 300%;color:rgb(47,91,122)"> Tus Cuentas</h1></center>
+</div>
+<br>
+<div class="column">
+    <% if current_usuario %>
+         <center><p ><%= link_to 'Abre una nueva Cuenta', accounts_new_path, :class => "button is-info", :style => "background-color:rgb(47,91,122);"%></p></center>
+    <% end %>
+</div>
+
+<%for cuenta in @cuentas do%>
+    <%if cuenta.usuario_id == current_usuario.id%>
+    <center>
+        <table class="table "> 
+            <thead>
+                <tr>
+                    <th>Número de Cuenta</th>
+                    <th>Tipo</th>
+                    <th>Monto</th>
+                    <th>Acciones</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <td><%= cuenta.id %></td>
+                <td><%= cuenta.tipo %></td>
+                <td><%= cuenta.monto %></td>
+                <td><p ><%= link_to 'Detalles', accounts_show_path(cuenta.id), :class => "button is-info is-small", :style => "background-color:rgb(47,91,122);"%></p>
+                <br><p ><%= link_to 'Eliminar', accounts_delete_path(cuenta.id), method: :delete, :class => "button is-info is-small", :style => "background-color:rgb(47,91,122);"%></p>
+                </td>
+            </tbody>
+        </table>
+    </center>
+    <%end%>
+<%end%>
+<br>
+<div>
+    <h1 class="subtitle"> Indicadores Económicos </h1>
+    
+    
+            <table class="table"> 
+                <thead>
+                    <tr>
+                        <th> Indicador </th>
+                        
+                        <th>Unidad de Medida</th>
+                       
+                        <th>Fecha Medición</th>
+                        
+                        <th>Valor</th>
+
+                    </tr>
+                </thead>
+                <%for llave in @output.keys do %>   
+                <tbody>
+                    <td><%= @output[llave]["name"] %></td>
+                    <td><%= @output[llave]["unit"] %></td>
+                    <td><%= DateTime.strptime(@output[llave]["date"].to_s,'%s') %></td>
+                    <td><%= @output[llave]["value"] %></td>
+                </tbody>
+                 <%end%>
+            </table>
+   <h3 class="subtitle"> Rescatados de www.indecon.site </h3>
+</div>

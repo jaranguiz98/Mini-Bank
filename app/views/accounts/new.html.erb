@@ -1,0 +1,27 @@
+<center><h1 class="title" style="font-size: 300%;color:rgb(47,91,122)"> Crea tu Mini Cuenta</h1></center>
+
+<%= form_with(model: @account, method: :post) do |f| %>
+  
+
+<div class="field ml-2">
+        <label class="label" style="color:rgb(47,91,122)"><%= f.label :'Tipo de Cuenta' %></label> 
+        <div class="control has-icons-left has-icons-right" style="width: 30%;">
+            <div class="select" type="text">
+                <select <%= f.text_field :tipo%>>
+                    <option value="Vista">Vista</option>
+                    <option value="Corriente">Corriente</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+  
+  
+
+
+<div class="action">
+        <p ><%= f.submit "Crear", :class => "button is-info ml-2", :style => "background-color:rgb(47,91,122);"%></p>
+</div>
+
+<% end %>

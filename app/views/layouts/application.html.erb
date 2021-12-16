@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <title>Banco</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <p class="notice"><strong><%= notice %></strong></p>
+    <p class="alert"><strong><%= alert %></strong></p>
+  </head>
+
+  <body>
+  <% if current_usuario %>
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:rgb(47,91,122);">
+    <div class="navbar-brand">
+      
+
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/accounts/index" style="color:rgb(255,255,255);">
+          Mis Cuentas
+        </a>
+
+        <a class="navbar-item" href="/transferencias/index" style="color:rgb(255,255,255);">
+        Transferir a Terceros
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <a class="navbar-item" style="color:rgb(255,255,255);" <%= link_to "Cerrar Sesión", destroy_usuario_session_path, method: :delete %>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <% else %>
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:rgb(47,91,122);">
+      <div class="navbar-brand">
+        
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+
+        <div class="navbar-end">
+          <a class="navbar-item" href="/login" style="color:rgb(255,255,255);">
+            Inicar Sesión
+          </a>
+          <a class="navbar-item" href="/register" style="color:rgb(255,255,255  );">
+            Registrarme
+          </a>
+        </div>
+      </div>
+    </nav>
+  <% end %>
+    <%= yield %>
+  
+  </body> 
+
+  <br>
+  <br>
+  <footer class="footer" style="background-color:rgb(255,255,255);" >
+  <div class="content has-text-centered" style="color:rgb(47,91,122)">
+    <p>
+      <strong style="color:rgb(47,91,122)">Mini Bank®</strong> by José Tomás Aránguiz <br> <a href="https://github.com/jaranguiz98/Mini-Bank">Github</a><br>
+    </p>
+  </div>
+</footer>
+</html>

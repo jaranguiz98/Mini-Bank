@@ -1,0 +1,2 @@
+class HistorialesController < ApplicationController
+end

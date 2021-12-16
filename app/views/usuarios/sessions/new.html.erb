@@ -1,0 +1,28 @@
+<h2 class="subtitle ml-2" style="font-size: 300%;color:rgb(47,91,122)"> Iniciar Sesión</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :email %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
+          </div>
+  </div>
+   <div class="field ml-2">
+          <label class="label" style="color:rgb(0,0,0)"><%= f.label :password %></label> 
+          <div class="control has-icons-left has-icons-right" style="width: 30%;">
+              <%= f.password_field :password, autofocus: true, autocomplete: "current-password"%>
+          </div>
+  </div>
+  <% if devise_mapping.rememberable? %>
+    <div class="field ml-2">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="action">
+        <p ><%= f.submit "Log In", :class => "button is-info ml-2", :style => "background-color:rgb(47,91,122);"%></p>
+  </div>
+<% end %>
+
+<%= render "usuarios/shared/links" %>

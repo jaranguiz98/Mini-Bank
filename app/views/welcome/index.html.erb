@@ -1,0 +1,11 @@
+
+<br>
+<% if current_usuario %>
+    <center><h1 class="title" style="font-size: 300%;color:rgb(47,91,122)"><%= current_usuario.nombre%> Bienvenido a Mini Bank®</h1></center>
+    <center><figure class="image is-129x129" style="width: 30%; height: 30%">
+        <img src="https://i.ibb.co/C8wfLFz/Logo.png" class="rotate90">
+        
+    </figure></center>
+<% else %>
+    <center><h1 class="title" style="font-size: 300%;color:rgb(47,91,122)">Bienvenido a Mini Bank®</h1></center>
+<% end %>
